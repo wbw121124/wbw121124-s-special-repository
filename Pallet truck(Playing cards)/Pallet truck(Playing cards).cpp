@@ -22,7 +22,7 @@ signed main()
 {
 	srand((int)time(0));
 	system("pause");
-	cout<<"×¼±¸ÖĞ......\n";
+	cout<<"å‡†å¤‡ä¸­......\n";
 	for(int i=1;i<=54;i++)
 	{
 		if((i&1)==1)
@@ -41,7 +41,7 @@ signed main()
 			vis[x]=true;
 			p2.push_back(s[x]);
 		}
-		cout<<char(13)<<"ÒÑÍê³É£º"<<i*100/54<<"%";
+		cout<<char(13)<<"å·²å®Œæˆï¼š"<<i*100/54<<"%";
 		Sleep(50);
 	}
 	Sleep(500);
@@ -51,7 +51,7 @@ signed main()
 	while(win==0)
 	{
 		system("cls");
-		cout<<++cnt<<"¾Ö\n";
+		cout<<++cnt<<"å±€\n";
 		char p=ju==1?p1.back():p2.back();
 		if(ju==1)
 			p1.pop_back(),ju=0;
@@ -67,7 +67,12 @@ signed main()
 				cout<<i;
 			cout<<'\n';
 		}
-		cout<<p;
+		if(p=='0')
+			cout<<"10";
+		else if(p=='O')
+			cout<<"JOKER";
+		else
+			cout<<p;
 		pa.push_back(p);
 		if(::find(pa,p)!=pa.size()-1)
 		{
@@ -92,6 +97,6 @@ signed main()
 			win=1;
 	}
 	system("cls");
-	cout<<"¹ıÁË"<<cnt<<"¾Ö£¬p"<<win<<"Ó®ÁË!";
+	cout<<"è¿‡äº†"<<cnt<<"å±€ï¼Œp"<<win<<"èµ¢äº†!";
 	return 0;
 }
